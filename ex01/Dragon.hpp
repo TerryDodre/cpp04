@@ -10,8 +10,8 @@ private:
 	/* data */
 public:
 	Dragon(void);
-	Dragon(Dragon const &s);
 	virtual ~Dragon(void);
+	Dragon(Dragon const &s);
 	virtual Dragon	&operator=(Dragon const &s);
 	virtual void 	takeDamage(int damage);
 };

@@ -1,7 +1,12 @@
 #include "Sword.hpp"
 
 Sword::Sword(void)
-	: AWeapon("Sword", 8, 50)
+	: AWeapon("Sword", 50, 8)
+{
+	return;
+}
+
+Sword::~Sword(void)
 {
 	return;
 }
@@ -12,16 +17,11 @@ Sword::Sword(Sword const &p)
 	return;
 }
 
-Sword::~Sword(void)
-{
-	return;
-}
-
 Sword		&Sword::operator=(Sword const &p)
 {
-	this->_name = p._name;
-	this->_damage = p._damage;
-	this->_costap = p._costap;
+	if (this == &p)
+		return (*this);
+	AWeapon::operator=(p);
 	return (*this);
 }
 

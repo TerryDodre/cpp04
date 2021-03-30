@@ -10,8 +10,8 @@ private:
 	/* data */
 public:
 	Sword(void);
-	Sword(Sword const &p);
 	virtual ~Sword(void);
+	Sword(Sword const &p);
 	Sword		    &operator=(Sword const &p);
 	virtual void	attack(void) const;
 };

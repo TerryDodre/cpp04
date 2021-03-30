@@ -1,7 +1,12 @@
 #include "PowerFist.hpp"
 
 PowerFist::PowerFist(void)
-	: AWeapon("Power Fist", 8, 50)
+	: AWeapon("Power Fist", 50, 8)
+{
+	return;
+}
+
+PowerFist::~PowerFist(void)
 {
 	return;
 }
@@ -12,16 +17,11 @@ PowerFist::PowerFist(PowerFist const &p)
 	return;
 }
 
-PowerFist::~PowerFist(void)
-{
-	return;
-}
-
 PowerFist		&PowerFist::operator=(PowerFist const &p)
 {
-	this->_name = p._name;
-	this->_damage = p._damage;
-	this->_costap = p._costap;
+	if (this == &p)
+		return (*this);
+	AWeapon::operator=(p);
 	return (*this);
 }
 

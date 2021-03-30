@@ -10,8 +10,8 @@ private:
 	/* data */
 public:
 	PowerFist(void);
-	PowerFist(PowerFist const &p);
 	virtual ~PowerFist(void);
+	PowerFist(PowerFist const &p);
 	PowerFist		&operator=(PowerFist const &p);
 	virtual void	attack(void) const;
 };

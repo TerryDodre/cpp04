@@ -1,11 +1,5 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy(void)
-	: _hp(0), _type ("No type")
-{
-	return;
-}
-
 Enemy::Enemy(int hp, std::string const &type)
 	: _hp(hp), _type(type)
 {
@@ -24,6 +18,8 @@ Enemy::Enemy(Enemy const &e)
 
 Enemy		&Enemy::operator=(Enemy const &e)
 {
+	if (this == &e)
+		return (*this);
 	this->_hp = e.getHp();
 	this->_type = e.getType();
 	return (*this);

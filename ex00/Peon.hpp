@@ -7,10 +7,12 @@
 class Peon : public Victim
 {
 private:
-	/* data */
+	Peon(void);
 public:
 	Peon(std::string name);
 	virtual ~Peon(void);
+	Peon(Peon const &p);
+	Peon			&operator=(Peon const &p);
 	virtual void	getPolymorphed(void) const;
 };
 

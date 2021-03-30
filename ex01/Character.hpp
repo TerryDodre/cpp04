@@ -11,10 +11,10 @@ private:
 	std::string	_name;
 	int			_ap;
 	AWeapon		*_weapon;
-public:
 	Character(void);
+public:
 	Character(std::string const &name);
-	~Character();
+	~Character(void);
 	Character(Character const &c);
 	Character	&operator=(Character const &c);
 	void		recoverAp(void);

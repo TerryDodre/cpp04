@@ -1,11 +1,5 @@
 #include "Character.hpp"
 
-Character::Character(void)
-	: _name("No Name"), _ap(40), _weapon(NULL)
-{
-	return;
-}
-
 Character::Character(std::string const &name)
 	: _name(name), _ap(40), _weapon(NULL)
 {
@@ -24,6 +18,8 @@ Character::Character(Character const &c)
 
 Character		&Character::operator=(Character const &c)
 {
+	if (this == &c)
+		return (*this);
 	this->_name = c.getName();
 	this->_ap = c.getAp();
 	this->_weapon = c.getWeapon();
@@ -39,20 +35,19 @@ void			Character::recoverAp(void)
 
 void			Character::equip(AWeapon *weapon)
 {
-	if (weapon != NULL)
-		this->_weapon = weapon;
+	this->_weapon = weapon;
 }
 
 void			Character::attack(Enemy *e)
 {
 	if (this->_weapon == NULL)
-		return;
-	if (this->_weapon->getAPCost() > this->_ap)
+		std::cout << this->_name << " don't have a weapon." << std::endl;
+	else if (this->_weapon->getAPCost() > this->_ap)
 		std::cout << this->_name << " has no AP, he can't attack." << std::endl;
 	else
 	{
-		std::cout << this->_name << " attacks " 
-			<< e->getType() << " with a " << this->_weapon->getName() << std::endl;
+		std::cout << this->_name << " attacks " << e->getType()
+			<< " with a " << this->_weapon->getName() << std::endl;
 		this->_weapon->attack();
 		e->takeDamage(this->_weapon->getDamage());
 		this->_ap -= this->_weapon->getAPCost();
@@ -82,6 +77,7 @@ std::ostream	&operator<<(std::ostream &o, Character const &c)
 		o << c.getName() << " has " << c.getAp() 
 			<< " AP and wields a " << c.getWeapon()->getName() << std::endl;
 	else
-		o <<c.getName() << " has " << c.getAp() << " AP and is unarmed" << std::endl;
+		o <<c.getName() << " has " << c.getAp() << " AP and is unarmed"
+			<< std::endl;
 	return (o);
 }

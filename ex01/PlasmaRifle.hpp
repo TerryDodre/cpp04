@@ -10,8 +10,8 @@ private:
 	/* data */
 public:
 	PlasmaRifle(void);
-	PlasmaRifle(PlasmaRifle const &p);
 	virtual ~PlasmaRifle(void);
+	PlasmaRifle(PlasmaRifle const &p);
 	PlasmaRifle		&operator=(PlasmaRifle const &p);
 	virtual void	attack(void) const;
 };

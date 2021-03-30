@@ -7,22 +7,23 @@ Dragon::Dragon(void)
 	return;
 }
 
-Dragon::Dragon(Dragon const &s)
-	: Enemy(s.getHp(), s.getType())
-{
-	*this = s;
-}
-
 Dragon::~Dragon(void)
 {
 	std::cout << "Oooorgh..." << std::endl;
 	return;
 }
 
+Dragon::Dragon(Dragon const &s)
+	: Enemy(s.getHp(), s.getType())
+{
+	*this = s;
+}
+
 Dragon		&Dragon::operator=(Dragon const &s)
 {
-	this->_hp = s.getHp();
-	this->_type = s.getType();
+	if (this == &s)
+		return (*this);
+	Enemy::operator=(s);
 	return (*this);
 }
 

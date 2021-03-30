@@ -10,8 +10,8 @@ private:
 	/* data */
 public:
 	RadScorpion(void);
-	RadScorpion(RadScorpion const &s);
 	virtual ~RadScorpion(void);
+	RadScorpion(RadScorpion const &s);
 	virtual RadScorpion	&operator=(RadScorpion const &s);
 };
 

@@ -7,21 +7,22 @@ RadScorpion::RadScorpion(void)
 	return;
 }
 
-RadScorpion::RadScorpion(RadScorpion const &s)
-	: Enemy(s.getHp(), s.getType())
-{
-	*this = s;
-}
-
 RadScorpion::~RadScorpion(void)
 {
 	std::cout << "* SPROTCH *" << std::endl;
 	return;
 }
 
+RadScorpion::RadScorpion(RadScorpion const &s)
+	: Enemy(s.getHp(), s.getType())
+{
+	*this = s;
+}
+
 RadScorpion		&RadScorpion::operator=(RadScorpion const &s)
 {
-	this->_hp = s.getHp();
-	this->_type = s.getType();
+	if (this == &s)
+		return (*this);
+	Enemy::operator=(s);
 	return (*this);
 }

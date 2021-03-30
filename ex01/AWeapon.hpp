@@ -8,10 +8,10 @@ class AWeapon
 protected:
 	std::string		_name;
 	int				_damage;
-	int				_costap;
-public:
+	int				_apcost;
 	AWeapon(void);
-	AWeapon(std::string const &name, int apcost, int damage);
+public:
+	AWeapon(std::string const &name, int damage, int apcost);
 	virtual ~AWeapon(void);
 	AWeapon(AWeapon const &w);
 	AWeapon			&operator=(AWeapon const &w);

@@ -10,8 +10,8 @@ private:
 	/* data */
 public:
 	SuperMutant(void);
-	SuperMutant(SuperMutant const &s);
 	virtual ~SuperMutant(void);
+	SuperMutant(SuperMutant const &s);
 	virtual SuperMutant	&operator=(SuperMutant const &s);
 	virtual void 		takeDamage(int damage);
 };

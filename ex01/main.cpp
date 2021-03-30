@@ -32,7 +32,7 @@ int     main(void)
 	me->attack(b);
 	std::cout << *me;
 
-	std::cout << std::endl;
+	std::cout << "\n///////////////////////////\n" << std::endl;
 
 	Enemy* a = new Dragon();
 
@@ -42,14 +42,14 @@ int     main(void)
 	std::cout << *me;
 	me->attack(a);
 	std::cout << *me;
-	me->attack(b);
+	me->attack(a);
 	std::cout << *me;
-	me->attack(b);
+	me->attack(a);
 	me->recoverAp();
 	std::cout << *me;
-	me->attack(b);
+	me->attack(a);
 	std::cout << *me;
-	me->attack(b);
+	me->attack(a);
 	std::cout << *me;
 
 

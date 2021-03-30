@@ -7,10 +7,12 @@
 class Random : public Victim
 {
 private:
-	/* data */
+	Random(void);
 public:
 	Random(std::string name);
 	virtual ~Random(void);
+	Random(Random const &r);
+	Random			&operator=(Random const &r);
 	virtual void	getPolymorphed(void) const;
 };
 

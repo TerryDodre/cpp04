@@ -7,22 +7,23 @@ SuperMutant::SuperMutant(void)
 	return;
 }
 
-SuperMutant::SuperMutant(SuperMutant const &s)
-	: Enemy(s.getHp(), s.getType())
-{
-	*this = s;
-}
-
 SuperMutant::~SuperMutant(void)
 {
 	std::cout << "Aaargh..." << std::endl;
 	return;
 }
 
+SuperMutant::SuperMutant(SuperMutant const &s)
+	: Enemy(s.getHp(), s.getType())
+{
+	*this = s;
+}
+
 SuperMutant		&SuperMutant::operator=(SuperMutant const &s)
 {
-	this->_hp = s.getHp();
-	this->_type = s.getType();
+	if (this == &s)
+		return (*this);
+	Enemy::operator=(s);
 	return (*this);
 }
 

@@ -13,6 +13,19 @@ Random::~Random(void)
 	return;
 }
 
+Random::Random(Random const &p)
+	: Victim(p)
+{
+}
+
+Random			&Random::operator=(Random const &p)
+{
+	if (this == &p)
+		return (*this);
+	Victim::operator=(p);
+	return (*this);
+}
+
 void			Random::getPolymorphed(void) const
 {
 	std::cout << _name << " has been turned into a green cow!" << std::endl;
