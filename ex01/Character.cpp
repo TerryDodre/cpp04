@@ -51,6 +51,8 @@ void			Character::attack(Enemy *e)
 		this->_weapon->attack();
 		e->takeDamage(this->_weapon->getDamage());
 		this->_ap -= this->_weapon->getAPCost();
+		if (this->_ap < 0)
+			this->_ap = 0;
 		if (e->getHp() <= 0)
 			delete e;
 	}
