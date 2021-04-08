@@ -28,12 +28,12 @@ int main()
     
     me->use(0, *bob);
     me->use(1, *bob);
-    std::cout << iceTmp->getType() << " xp = " << cureTmp->getXP() << std::endl;
+    std::cout << iceTmp->getType() << " xp = " << iceTmp->getXP() << std::endl;
     std::cout << cureTmp->getType() << " xp = " << cureTmp->getXP() << std::endl;
 
     me->use(0, *bob);
-    std::cout << iceTmp->getType() << " xp = " << cureTmp->getXP() << std::endl;
-    std::cout << cureTmp->getType() << " xp = " << cureTmp->getType() << std::endl;
+    std::cout << iceTmp->getType() << " xp = " << iceTmp->getXP() << std::endl;
+    std::cout << cureTmp->getType() << " xp = " << cureTmp->getXP() << std::endl;
 
 	delete bob;
 	delete me;
